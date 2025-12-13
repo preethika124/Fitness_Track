@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="profile-card">
+
+    <div class="profile-header">
+        <div class="profile-logo">SH</div>
+        <div>
+            <h2>Your Profile</h2>
+            <p class="sub">You can update your personal health details</p>
+        </div>
+    </div>
+
+  
+    <div class="hello-row">
+        <div class="hello-text">Hello, <span id="firstName"></span></div>
+        <div class="role-text">Role: <span id="role"></span></div>
+    </div>
+
+    <hr>
+
+    <!-- EDITABLE FIELDS -->
+    <div class="row">
+        <label>Age</label>
+        <input id="age" type="number" placeholder="Enter age">
+    </div>
+
+    <div class="row">
+        <label>Weight (kg)</label>
+        <input id="weight" type="number" placeholder="Enter weight">
+    </div>
+
+    <div class="row">
+        <label>Goals</label>
+        <input id="goals" type="text" placeholder="Your fitness goals">
+    </div>
+
+    <button class="primary" id="saveBtn">Save Changes</button>
+    <button class="btn-ghost" id="logoutBtn">Back to Home</button>
+
+</div>
+
+<script src="js/profile.js"></script>
+</body>
+</html>

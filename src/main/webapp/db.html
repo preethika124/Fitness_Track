@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analytics Dashboard</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Inter", Arial, sans-serif;
+            background: #f7fdf7;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 14px 25px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-radius: 0 0 18px 18px;
+        }
+
+        .logo {
+            background: #1b8c40;
+            color: white;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            margin-left: 18px;
+            font-size: 15px;
+            color: #157631;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .active {
+            border-bottom: 2px solid #157631;
+        }
+
+        .sh-container {
+            width: 1000px;
+            margin: 30px auto;
+            padding: 24px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .sh-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 25px;
+        }
+
+        .sh-logo {
+            background: #06832d;
+            padding: 16px;
+            border-radius: 16px;
+            color: white;
+            font-size: 22px;
+        }
+
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .analytics-card {
+            background: #f7fff7;
+            border: 1px solid #d6ebd6;
+            border-radius: 18px;
+            padding: 22px;
+        }
+
+        .analytics-title {
+            font-size: 14px;
+            color: #157631;
+            font-weight: 600;
+        }
+
+        .analytics-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #145b32;
+        }
+
+        .progress-section {
+            margin-top: 35px;
+        }
+
+        .progress-item {
+            margin-bottom: 18px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #e6f3e6;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 20px;
+        }
+
+        .insights-box {
+            margin-top: 30px;
+            background: #fffdf3;
+            border: 1px solid #f3e3b4;
+            border-radius: 18px;
+            padding: 22px;
+        }
+
+        .insight {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .chart-box {
+            background: white;
+            border: 1px solid #d6ebd6;
+            border-radius: 18px;
+            padding: 22px;
+            margin-top: 25px;
+        }
+
+        .chart-title {
+            font-weight: 700;
+            color: #145b32;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .sh-container {
+                width: 90%;
+            }
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">SH</div>
+    
+</div>
+
+<div class="sh-container">
+
+    <div class="sh-header">
+        <div class="sh-logo">📊</div>
+        <div>
+            <h2>Analytics Dashboard</h2>
+            <p>Track your fitness & nutrition progress</p>
+        </div>
+    </div>
+
+    <div class="analytics-grid">
+        <div class="analytics-card">
+            <div class="analytics-title">Today Calories</div>
+            <div class="analytics-value" id="todayCalories">--</div>
+        </div>
+
+        <div class="analytics-card">
+            <div class="analytics-title">Weekly Calories Burned</div>
+            <div class="analytics-value" id="weeklyBurned">--</div>
+        </div>
+
+        <div class="analytics-card">
+            <div class="analytics-title">Workout Days (7 days)</div>
+            <div class="analytics-value" id="workoutDays">--</div>
+        </div>
+    </div>
+
+  
+
+
+    <div class="insights-box">
+        <h3>Insights</h3>
+        <div id="insights"></div>
+    </div>
+
+    <div class="chart-box">
+        <div class="chart-title">Workout Frequency</div>
+        <canvas id="workoutChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+        <div class="chart-title">Calories Consumed vs Burned</div>
+        <canvas id="calorieChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+        <div class="chart-title">Water Intake & Sleep</div>
+        <canvas id="logChart"></canvas>
+    </div>
+
+</div>
+
+<!-- ✅ JS LOADED LAST -->
+<script src="js/db.js"></script>
+
+</body>
+</html>

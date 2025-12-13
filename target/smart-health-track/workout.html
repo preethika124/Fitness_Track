@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log Workout</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sh-container">
+
+    <div class="sh-header">
+        <div class="sh-logo">SH</div>
+        <div>
+            <h2>Log Workout</h2>
+            <p class="sh-sub">Track your exercise today</p>
+        </div>
+    </div>
+
+    <select id="exerciseType" class="sh-input">
+        <option>Running</option>
+        <option>Yoga</option>
+        <option>Cycling</option>
+        <option>Strength Training</option>
+        <option>Swimming</option>
+    </select>
+
+    <input type="number" id="duration" class="sh-input" placeholder="Duration (minutes)">
+    <input type="number" id="calories" class="sh-input" placeholder="Calories Burned (optional)">
+    <input type="date" id="workoutDate" class="sh-input">
+
+   <div style="margin-top: 15px; display:flex; gap:12px;">
+        <button class="sh-btn-primary" id="saveWorkout"> Save Log</button>
+        <button class="sh-btn-ghost" onclick="history.back()">Back</button>
+    </div>
+
+</div>
+
+<script src="js/workout.js"></script>
+</body>
+</html>

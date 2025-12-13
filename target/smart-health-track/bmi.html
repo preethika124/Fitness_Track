@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI - Smart Health</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="logo">SH</div>
+        <div>
+            <h1>BMI Monitor</h1>
+            <p class="sub">Track and understand your healthy body level</p>
+        </div>
+    </div>
+
+    <!-- Height Input -->
+    <input id="height" type="number" placeholder="Height (cm)">
+
+    <!-- Weight Input -->
+    <input id="weight" type="number" placeholder="Weight (kg)">
+
+    <!-- Calculate Button -->
+    <button class="primary" id="calcBtn">Calculate BMI</button>
+
+    <!-- Result Box -->
+    <div id="bmiResult" class="hello-row" style="display:none; margin-top:20px;">
+        <div class="hello-text">Your BMI: <span id="bmiValue"></span></div>
+        <div class="role-text" id="bmiCategory"></div>
+    </div>
+
+    <!-- Health Suggestion Text -->
+    <p id="bmiSuggestion" class="sub" style="display:none; text-align:center; margin-top:12px;"></p>
+
+    <!-- Back Button -->
+    <button class="btn-ghost" id="backBtn">Back to Home</button>
+
+</div>
+
+<script src="js/bmi.js"></script>
+</body>
+</html>

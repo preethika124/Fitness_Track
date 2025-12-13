@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Logs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sh-container">
+
+    <div class="sh-header">
+        <div class="sh-logo">SH</div>
+        <div>
+            <h2>Daily Logs</h2>
+            <p class="sh-sub">Track water & sleep</p>
+        </div>
+    </div>
+
+    <input id="waterIntake" class="sh-input" type="number" placeholder="Water Intake (liters)">
+    <input id="sleepHours" class="sh-input" type="number" placeholder="Sleep Hours">
+
+    <textarea id="notes" class="sh-notes" placeholder="Notes"></textarea>
+
+    <input id="logDate" class="sh-input" type="date">
+
+    <div style="margin-top: 15px; display:flex; gap:12px;">
+        <button class="sh-btn-primary" id="saveLog"> Save Log</button>
+        <button class="sh-btn-ghost" onclick="history.back()">Back</button>
+    </div>
+
+</div>
+
+
+<script src="js/logs.js"></script>
+</body>
+</html>

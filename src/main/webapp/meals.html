@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log Meal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sh-container">
+
+    <div class="sh-header">
+        <div class="sh-logo">SH</div>
+        <div>
+            <h2>Meal Tracker</h2>
+            <p class="sh-sub">Log todays meals</p>
+        </div>
+    </div>
+
+    <select id="mealType" class="sh-input">
+        <option>Breakfast</option>
+        <option>Lunch</option>
+        <option>Dinner</option>
+        <option>Snacks</option>
+    </select>
+
+    <input id="calorieCount" class="sh-input" type="number" placeholder="Calories">
+    <input id="protein" class="sh-input" type="number" placeholder="Protein (g)">
+    <input id="carbs" class="sh-input" type="number" placeholder="Carbs (g)">
+    <input id="fats" class="sh-input" type="number" placeholder="Fats (g)">
+    <input id="mealDate" class="sh-input" type="date">
+
+    <div style="margin-top: 15px; display:flex; gap:12px;">
+        <button class="sh-btn-primary" id="saveMeal">Save Log</button>
+        <button class="sh-btn-ghost" onclick="history.back()">Back</button>
+    </div>
+
+</div>
+
+<script src="js/meals.js"></script>
+</body>
+</html>

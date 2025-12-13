@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tracker - Smart Health</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="sh-container">
+
+        <div class="sh-header">
+            <div class="sh-logo">SH</div>
+            <div>
+                <h2>Daily Tracker</h2>
+                <p class="sh-sub">Today's health summary</p>
+            </div>
+        </div>
+
+        <div class="card-container">
+
+            <!-- Workouts -->
+            <div class="sh-card">
+                <h3>Workouts</h3>
+                <div id="dashWorkout"></div>
+                <a href="workout.html"><button class="sh-btn-blue">📘 Add Log Details</button></a>
+            </div>
+
+            <!-- Meals -->
+            <div class="sh-card">
+                <h3>Meals</h3>
+                <div id="dashMeals"></div>
+                <a href="meals.html">
+    <button class="sh-btn-blue">📘 Add Log Details</button>
+
+</a>
+            </div>
+
+            <!-- Daily Logs -->
+            <div class="sh-card">
+                <h3>Daily Logs</h3>
+                <div id="dashLog"></div>
+                <a href="logs.html"><button class="sh-btn-blue">📘 Add Log Details</button></a>
+            </div>
+
+        </div>
+
+      
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

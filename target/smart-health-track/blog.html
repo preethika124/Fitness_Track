@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Blog - Smart Health Track</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .blog-card.featured-card {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    white-space: normal;
+    word-wrap: break-word;
+    min-height: auto;
+        height: auto;
+}
+.blog-card.featured-card .blog-card-excerpt {
+    display: block;
+    max-height: none;
+    overflow: visible;
+    white-space: normal;
+    line-height: 1.6;
+}
+
+        .blog-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .blog-hero {
+            background: linear-gradient(135deg, #e8ffe8 0%, #f0fff0 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .blog-hero h1 {
+            color: #155b32;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .blog-hero p {
+            color: #555;
+            font-size: 16px;
+        }
+        .category-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .category-tab {
+            padding: 10px 20px;
+            background: #f4fff4;
+            border: 1px solid #d6f3d6;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .category-tab:hover, .category-tab.active {
+            background: #157631;
+            color: white;
+            border-color: #157631;
+        }
+        .featured-section {
+            margin-bottom: 40px;
+        }
+        .featured-section h2 {
+            color: #155b32;
+            margin-bottom: 20px;
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .blog-card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #d6f3d6, #e8ffe8);
+        }
+        .blog-card-content {
+            padding: 18px;
+        }
+        .blog-card-category {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #e8ffe8;
+            color: #157631;
+            font-size: 12px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .blog-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .blog-card-excerpt {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .blog-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #888;
+        }
+        .blog-card-author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #157631;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .blog-card-stats {
+            display: flex;
+            gap: 12px;
+        }
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .posts-section h2 {
+            color: #155b32;
+            margin-bottom: 20px;
+        }
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .create-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1b8c40, #157631);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(21, 118, 49, 0.4);
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .create-btn:hover {
+            transform: scale(1.1);
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px;
+            color: #888;
+        }
+        .verified-badge {
+            background: #157631;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+        @media (max-width: 900px) {
+            .featured-grid, .posts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .featured-grid, .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-left">
+            <div class="logo">SH</div>
+          
+        </div>
+        <div class="nav-right">
+           
+            <a href="home.html">Home</a>
+        </div>
+       
+    </nav>
+
+    <div class="blog-container">
+        <div class="blog-hero">
+            <h1>Health & Wellness Blog</h1>
+            <p>Discover articles on nutrition, fitness routines, and mental wellness from our experts and community</p>
+        </div>
+
+      
+
+        <div class="featured-section" id="featuredSection">
+            <h2>Featured Articles</h2>
+            <div class="featured-grid" id="featuredGrid">
+                <div class="empty-state">Loading featured articles...</div>
+            </div>
+        </div>
+          <div class="category-tabs">
+            <div class="category-tab active" data-category="">All</div>
+            <div class="category-tab" data-category="nutrition">Nutrition</div>
+            <div class="category-tab" data-category="fitness">Fitness</div>
+            <div class="category-tab" data-category="mental-wellness">Mental Wellness</div>
+            <div class="category-tab" data-category="lifestyle">Lifestyle</div>
+        </div>
+
+        <div class="posts-section">
+            <h2>Community Posts</h2>
+            <div class="posts-grid" id="postsGrid">
+                <div class="empty-state">Loading posts...</div>
+            </div>
+        </div>
+    </div>
+
+    <button class="create-btn" id="createBtn" title="Create New Post">+</button>
+
+    <script src="js/blog.js"></script>
+</body>
+</html>

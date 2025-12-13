@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome - Smart Health</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Full-screen layout */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom right, #eafff1, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .welcome-box {
+            text-align: center;
+            padding: 40px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .logo-circle {
+            width: 90px;
+            height: 90px;
+            background: #007f32;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 32px;
+            margin: 0 auto 25px;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 128, 0, 0.25);
+        }
+
+        h1 {
+            font-size: 40px;
+            margin: 0;
+            font-weight: 700;
+            color: #0c4b26;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #444;
+            opacity: 0;
+            animation: fadeSlide 1.3s ease forwards 0.6s;
+        }
+
+        /* Buttons */
+        .btn-group {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 30px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.25s ease;
+        }
+
+        .btn-login {
+            background: #007f32;
+            color: white;
+            box-shadow: 0px 4px 12px rgba(0, 128, 0, 0.3);
+        }
+        .btn-login:hover {
+            background: #005f25;
+            box-shadow: 0px 4px 16px rgba(0, 128, 0, 0.45);
+        }
+
+        .btn-register {
+            background: #e7ffe7;
+            color: #007f32;
+            border: 2px solid #007f32;
+        }
+
+        .btn-register:hover {
+            background: #c8f9c8;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="welcome-box">
+
+    <div class="logo-circle">SH</div>
+
+    <h1>Smart Health & Fitness System</h1>
+
+    <p class="subtitle">Your journey to a healthy lifestyle starts here.</p>
+
+    <div class="btn-group">
+        <button class="btn btn-login" onclick="location.href='login.html'">Login</button>
+        <button class="btn btn-register" onclick="location.href='register.html'">Register</button>
+    </div>
+
+</div>
+
+</body>
+</html>

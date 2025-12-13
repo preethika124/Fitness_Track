@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .nav-link-btn {
+    background: none;
+    border: none;
+    color: #157631;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 18px;
+}
+
+.nav-link-btn:hover {
+    color: #1b8c40;
+    text-decoration: underline;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Home - Smart Health</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">SH</div>
+    <div class="nav-links">
+        <a href="dashboard.html">Daily Tracker</a>
+          <a href="db.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="bmi.html">BMI</a>
+          <a href="blog.html">Blogs</a>
+              <a href="trainers.html">Trainers</a>
+             
+        <button id="logoutBtn" class="nav-link-btn">log out</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="header">
+        <div>
+            <h1>Daily Health Tip</h1>
+           
+        </div>
+    </div>
+
+    <div id="tipCard" class="hello-row" style="display:flex; justify-content:center;">
+        <p id="dailyTip" class="hello-text" style="text-align:center;"></p>
+    </div>
+</div>
+
+<script src="js/home.js"></script>
+</body>
+</html>
