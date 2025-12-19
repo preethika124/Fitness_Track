@@ -164,6 +164,20 @@ select:focus {
     border-radius: 6px;
     display: inline-block;
 }
+       .nav-link-btn {
+    background: none;
+    border: none;
+    color: #157631;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 18px;
+}
+.nav-link-btn:hover {
+    color: #1b8c40;
+    text-decoration: underline;
+}
 
 /* ---------------------------------------------------
    ENROLL RESULT MESSAGE
@@ -189,7 +203,20 @@ select:focus {
 </style>
 </head>
 <body>
-<header class="main-nav"><div class="nav-left"><div class="logo">SH</div><h2 class="brand"></h2></div>
+<div class="navbar">
+    <div class="logo">SH</div>
+    <div class="nav-links">
+         <a href="home.html"> Home </a>
+        <a href="dashboard.html">Daily Tracker</a>
+          <a href="db.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="bmi.html">BMI</a>
+          <a href="blog.html">Blogs</a>
+              <a href="trainers.html">Trainers</a>
+             
+        <button id="logoutBtn" class="nav-link-btn">log out</button>
+    </div>
+</div>
 
 
 <div class="full-section">

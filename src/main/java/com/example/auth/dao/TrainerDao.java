@@ -73,18 +73,10 @@ public class TrainerDao {
 
                 try (ResultSet existRs = checkPs.executeQuery()) {
                     if (existRs.next()) {
-                        // RETURN EXISTING TRAINER – DO NOT INSERT AGAIN
-                        Trainer existing = new Trainer();
-                        existing.setId(existRs.getInt("id"));
-                        existing.setUserId(userId);
-                        existing.setName(name);
-                        existing.setSpecialization(existRs.getString("specialization"));
-                        existing.setExperienceYears(existRs.getInt("experience_years"));
-                        existing.setAvailability(existRs.getString("availability"));
-                        existing.setBio(existRs.getString("bio"));
-                        existing.setUserEmail(t.getUserEmail());
+                       
+    throw new IllegalStateException("trainer-already-enrolled");
 
-                        return existing;
+
                     }
                 }
             }

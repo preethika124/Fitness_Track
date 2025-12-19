@@ -276,8 +276,23 @@
             background: #f4fff4;
             border: 1px solid #d6f3d6;
             border-radius: 8px;
+            
             cursor: pointer;
         }
+               .nav-link-btn {
+    background: none;
+    border: none;
+    color: #157631;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 18px;
+}
+.nav-link-btn:hover {
+    color: #1b8c40;
+    text-decoration: underline;
+}
         .empty-comments {
             text-align: center;
             padding: 40px;
@@ -287,13 +302,20 @@
 </head>
 <body>
 
-    <nav class="main-nav">
-        <div class="nav-left">
-            <div class="logo">SHT</div>
-            <h2 class="brand">Smart Health Track</h2>
-        </div>
-        
-    </nav>
+    <div class="navbar">
+    <div class="logo">SH</div>
+    <div class="nav-links">
+         <a href="home.html"> Home </a>
+        <a href="dashboard.html">Daily Tracker</a>
+          <a href="db.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="bmi.html">BMI</a>
+          <a href="blog.html">Blogs</a>
+              <a href="trainers.html">Trainers</a>
+             
+        <button id="logoutBtn" class="nav-link-btn">log out</button>
+    </div>
+</div>
     <div class="post-container">
         <a href="blog.html" class="back-link">Back to Blog</a>
         <div class="post-card" id="postCard">

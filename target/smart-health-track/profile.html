@@ -4,18 +4,42 @@
     <meta charset="UTF-8">
     <title>Your Profile</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+                     .nav-link-btn {
+    background: none;
+    border: none;
+    color: #157631;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 18px;
+}
+.nav-link-btn:hover {
+    color: #1b8c40;
+    text-decoration: underline;
+}
+    </style>
 </head>
 <body>
+      <div class="navbar">
+    <div class="logo">SH</div>
+    <div class="nav-links">
+         <a href="home.html"> Home </a>
+        <a href="dashboard.html">Daily Tracker</a>
+          <a href="db.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="bmi.html">BMI</a>
+          <a href="blog.html">Blogs</a>
+              <a href="trainers.html">Trainers</a>
+             
+        <button id="logoutBtn" class="nav-link-btn">log out</button>
+    </div>
+</div>
 
 <div class="profile-card">
 
-    <div class="profile-header">
-        <div class="profile-logo">SH</div>
-        <div>
-            <h2>Your Profile</h2>
-            <p class="sub">You can update your personal health details</p>
-        </div>
-    </div>
+  
 
   
     <div class="hello-row">

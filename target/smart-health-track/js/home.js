@@ -18,9 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(err => console.error("Error loading tip:", err));
 
 
-         document.getElementById("logoutBtn").onclick = () => {
-        localStorage.removeItem("sha_token");
-        location.href = "login.html";
-    };
+  
 
 });

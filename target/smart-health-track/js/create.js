@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'login.html';
         return;
     }
+   
 
     const urlParams = new URLSearchParams(window.location.search);
     editId = urlParams.get('edit');

@@ -4,18 +4,41 @@
     <meta charset="UTF-8">
     <title>BMI - Smart Health</title>
     <link rel="stylesheet" href="css/style.css">
+        <style>
+                     .nav-link-btn {
+    background: none;
+    border: none;
+    color: #157631;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 18px;
+}
+.nav-link-btn:hover {
+    color: #1b8c40;
+    text-decoration: underline;
+}
+    </style>
 </head>
 <body>
-
+ <div class="navbar">
+    <div class="logo">SH</div>
+    <div class="nav-links">
+         <a href="home.html"> Home </a>
+        <a href="dashboard.html">Daily Tracker</a>
+          <a href="db.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="bmi.html">BMI</a>
+          <a href="blog.html">Blogs</a>
+              <a href="trainers.html">Trainers</a>
+             
+        <button id="logoutBtn" class="nav-link-btn">log out</button>
+    </div>
+</div>
 <div class="container">
 
-    <div class="header">
-        <div class="logo">SH</div>
-        <div>
-            <h1>BMI Monitor</h1>
-            <p class="sub">Track and understand your healthy body level</p>
-        </div>
-    </div>
+   
 
     <!-- Height Input -->
     <input id="height" type="number" placeholder="Height (cm)">

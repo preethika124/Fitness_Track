@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+
+
   function render(d) {
     if (!display) return;
 

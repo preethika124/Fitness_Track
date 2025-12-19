@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error parsing token:', e);
         }
     }
+ 
 
     loadPost();
     loadComments();

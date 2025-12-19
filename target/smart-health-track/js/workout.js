@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
       location.href = "login.html"; 
       return; 
   }
+ 
+
 
   const typeEl = document.getElementById("exerciseType");
   const durationEl = document.getElementById("duration");
@@ -53,5 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Network error");
     }
   });
+
 
 });

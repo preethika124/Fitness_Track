@@ -5,6 +5,7 @@ document.getElementById('loginBtn').onclick = async () => {
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value.trim();
   if (!email || !password) { alert('email & password required'); return; }
+ 
 
   try {
     const res = await fetch('/smart-health-track/login', {

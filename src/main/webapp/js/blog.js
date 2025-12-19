@@ -167,6 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLogout();
 });
 
+
+
 function setupCategoryTabs() {
     const tabs = document.querySelectorAll('.category-tab');
     if (!tabs || tabs.length === 0) return;

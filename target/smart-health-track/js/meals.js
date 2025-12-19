@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+
   // Render meal list
   function render(items = []) {
     if (!items.length) {

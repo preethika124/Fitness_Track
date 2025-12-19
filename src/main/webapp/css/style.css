@@ -5,6 +5,27 @@ body {
     background: #f7fdf7;
     color: #1a1a1a;
     padding:0;
+}.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 14px 25px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-radius: 0 0 18px 18px;
+    margin-bottom: 25px;
+}
+
+.nav-links a {
+    margin-left: 18px;
+    font-size: 15px;
+    color: #157631;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #1b8c40;
 }
 /* Blog specific */
 .main-nav {
@@ -146,6 +167,20 @@ body {
     justify-content: center;
     align-items: center;
     transition: 0.3s;
+}
+        .nav-link-btn {
+    background: none;
+    border: none;
+    color: #157631;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 18px;
+}
+.nav-link-btn:hover {
+    color: #1b8c40;
+    text-decoration: underline;
 }
 
 .category-card:hover {

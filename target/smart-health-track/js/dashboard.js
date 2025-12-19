@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const mealsEl = document.getElementById("dashMeals");
   const logEl = document.getElementById("dashLog");
 
+    document.getElementById("logoutBtn").onclick = () => {
+        localStorage.removeItem("sha_token");
+        location.href = "login.html";
+    };
+
+
   async function loadDashboard() {
     try {
       const res = await fetch("/smart-health-track/dashboard", {

@@ -161,10 +161,17 @@ try {
             resp.setStatus(201);
             mapper.writeValue(resp.getWriter(), created);
         } catch (IllegalStateException ise) {
-            // user exists but is not a trainer
-            ise.printStackTrace();
-            resp.setStatus(403);
-            resp.getWriter().write("{\"error\":\"you-must-be-trainer\"}");
+             if ("trainer-already-enrolled".equals(ise.getMessage())) {
+        resp.setStatus(409); // Conflict
+        resp.getWriter().write(
+            "{\"error\":\"Trainer already enrolled with same details\"}"
+        );
+    } else {
+        resp.setStatus(403);
+        resp.getWriter().write(
+            "{\"error\":\"you must be trainer\"}"
+        );
+    }
         } catch (Exception e) {
             e.printStackTrace();
             resp.setStatus(500);

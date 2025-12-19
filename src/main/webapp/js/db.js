@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("✅ Dashboard JS loaded");
 
+
     const token = localStorage.getItem("sha_token");
     if (!token) {
         window.location.href = "login.html";
@@ -11,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const headers = {
         "Authorization": "Bearer " + token
     };
+   
+
 
     
 

@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       matchesEl.innerHTML = "<p>Error fetching trainers</p>";
     }
   };
+  
 
   // Enrollment
   const enrollBtn = document.getElementById('enrollBtn');

@@ -6,6 +6,20 @@
     <title>Health Blog - Smart Health Track</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+               .nav-link-btn {
+    background: none;
+    border: none;
+    color: #157631;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 18px;
+}
+.nav-link-btn:hover {
+    color: #1b8c40;
+    text-decoration: underline;
+}
         .blog-card.featured-card {
     display: flex;
     flex-direction: column;
@@ -131,7 +145,28 @@
             display: flex;
             align-items: center;
             gap: 8px;
-        }
+        }.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 14px 25px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-radius: 0 0 18px 18px;
+    margin-bottom: 25px;
+}
+
+.nav-links a {
+    margin-left: 18px;
+    font-size: 15px;
+    color: #157631;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #1b8c40;
+}
         .author-avatar {
             width: 28px;
             height: 28px;
@@ -209,17 +244,20 @@
     </style>
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="nav-left">
-            <div class="logo">SH</div>
-          
-        </div>
-        <div class="nav-right">
-           
-            <a href="home.html">Home</a>
-        </div>
-       
-    </nav>
+   <div class="navbar">
+    <div class="logo">SH</div>
+    <div class="nav-links">
+        <a href="home.html"> Home </a>
+        <a href="dashboard.html">Daily Tracker</a>
+          <a href="db.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="bmi.html">BMI</a>
+          <a href="blog.html">Blogs</a>
+              <a href="trainers.html">Trainers</a>
+             
+        <button id="logoutBtn" class="nav-link-btn">log out</button>
+    </div>
+</div>
 
     <div class="blog-container">
         <div class="blog-hero">
