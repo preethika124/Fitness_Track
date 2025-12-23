@@ -17,7 +17,11 @@ document.getElementById('loginBtn').onclick = async () => {
     if (res.status === 200 && data.token) {
      
       localStorage.setItem('sha_token', data.token);
-      location.href = 'home.html';
+       if (data.role === 'TRAINER') {
+        location.href = 'home2.html';
+      } else {
+        location.href = 'home.html';
+      }
     } else {
       alert(data.error || 'Login failed');
     }

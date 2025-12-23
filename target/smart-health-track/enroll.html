@@ -206,34 +206,29 @@ select:focus {
 <div class="navbar">
     <div class="logo">SH</div>
     <div class="nav-links">
-         <a href="home.html"> Home </a>
-        <a href="dashboard.html">Daily Tracker</a>
-          <a href="db.html">Dashboard</a>
-        <a href="profile.html">Profile</a>
-        <a href="bmi.html">BMI</a>
-          <a href="blog.html">Blogs</a>
-              <a href="trainers.html">Trainers</a>
+         <a href="home2.html"> Home </a>
+     
+          <a href="blog2.html">Blogs</a>
              
-         <a href="login.html">logout</a>
+        <a href="login.html">logout</a>
     </div>
 </div>
 
 
-<div class="full-section">
-  <h2>Find a Trainer</h2>
-  <label for="goal">Select your fitness goal:</label>
-  <select id="goal">
-    <option value="weight_loss">Weight loss</option>
-    <option value="muscle_gain">Muscle gain</option>
-    <option value="flexibility">Flexibility</option>
-    <option value="endurance">Endurance</option>
-  </select>
-  <button class="primary" id="findBtn" style="width:auto; display:inline-block; margin-left:8px;">Find Trainers</button>
 
-  <div id="matches" style="margin-top:16px;"></div>
+
+<div class="full-section">
+  <h2>Enroll as a Trainer</h2>
+  <p>If you are a trainer, register your profile so users can find you.</p>
+
+  <input id="spec" placeholder="Specialization (e.g. Weight loss,Muscle gain,Flexibility,Endurance)" class="editor-input">
+  <input id="exp" type="number" placeholder="Experience years" class="editor-input">
+  <input id="avail" placeholder="Availability (e.g. Weekdays mornings)" class="editor-input">
+  <button class="primary" id="enrollBtn">Enroll as Trainer</button>
+
+  <div id="enrollResult" style="margin-top:12px;"></div>
 </div>
 
-
-<script src="js/trainers.js"></script>
+<script src="js/enroll.js"></script>
 </body>
 </html>

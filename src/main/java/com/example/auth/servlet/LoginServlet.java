@@ -18,7 +18,15 @@ public class LoginServlet extends HttpServlet {
     private final ObjectMapper mapper = new ObjectMapper();
 
     static class LoginRequest { public String email; public String password; }
+    static class LoginResponse {
+        public String token;
+        public String role;
 
+        public LoginResponse(String token, String role) {
+            this.token = token;
+            this.role = role;
+        }
+    }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         LoginRequest lr = mapper.readValue(req.getInputStream(), LoginRequest.class);
@@ -31,8 +39,12 @@ public class LoginServlet extends HttpServlet {
                 resp.setStatus(401); resp.getWriter().write("{\"error\":\"invalid credentials\"}"); return;
             }
             String token = JwtUtil.generateToken(u.getId(), u.getEmail(), u.getRole());
+              LoginResponse response =
+                    new LoginResponse(token, u.getRole());
+
             resp.setContentType("application/json");
-            resp.getWriter().write("{\"token\":\"" + token + "\"}");
+            mapper.writeValue(resp.getWriter(), response);
+
         } catch (Exception e) {
             e.printStackTrace();
             resp.setStatus(500); resp.getWriter().write("{\"error\":\"server error\"}");

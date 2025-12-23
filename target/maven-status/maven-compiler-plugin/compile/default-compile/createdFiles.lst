@@ -15,6 +15,7 @@ com\example\auth\servlet\TrainerMatchServlet$Req.class
 com\example\auth\servlet\LikeServlet$LikeRequest.class
 com\example\auth\servlet\ProfileServlet.class
 com\example\auth\model\Comment.class
+com\example\auth\servlet\LoginServlet$LoginResponse.class
 com\example\auth\dao\BlogLikeDao.class
 com\example\auth\servlet\RegisterServlet$RegisterRequest.class
 com\example\auth\servlet\RegisterServlet.class
