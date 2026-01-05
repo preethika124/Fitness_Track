@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadAllPosts();
     setupCategoryTabs();
     setupCreateButton();
-    setupLogout();
+ 
 });
 
 
@@ -192,16 +192,7 @@ function setupCreateButton() {
     }
 }
 
-function setupLogout() {
-    const btn = document.getElementById('logoutBtn');
-    if (btn) {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            localStorage.removeItem('sha_token');
-            window.location.href = 'login.html';
-        });
-    }
-}
+
 
 async function loadFeaturedPosts() {
    

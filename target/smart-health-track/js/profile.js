@@ -48,9 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    document.getElementById("logoutBtn").onclick = () => {
-       
-        location.href = "home.html";
-    };
+  
 
 });

@@ -23,16 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setupForm();
   
     setupCharCount();
-    setupLogout();
+  
 });
 
-function setupLogout() {
-    document.getElementById('logoutBtn').addEventListener('click', (e) => {
-        e.preventDefault();
-        localStorage.removeItem('sha_token');
-        window.location.href = 'login.html';
-    });
-}
+
 
 function setupCharCount() {
     const titleInput = document.getElementById('title');

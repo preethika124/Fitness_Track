@@ -14,10 +14,8 @@ if (!token) {
     const category = document.getElementById("bmiCategory");
     const suggest = document.getElementById("bmiSuggestion");
     const backBtn = document.getElementById("backBtn");
-      document.getElementById("logoutBtn").onclick = () => {
-        localStorage.removeItem("sha_token");
-        location.href = "login.html";
-    };
+    
+ 
 
     document.getElementById("calcBtn").onclick = () => {
 

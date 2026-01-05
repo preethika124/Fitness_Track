@@ -41,13 +41,7 @@ function setupEventListeners() {
         if (e.target.id === 'shareModal') hideShareModal();
     });
 
-    if (document.getElementById('logoutBtn')) {
-        document.getElementById('logoutBtn').addEventListener('click', (e) => {
-            e.preventDefault();
-            localStorage.removeItem('sha_token');
-            window.location.href = 'login.html';
-        });
-    }
+
 }
 
 async function loadPost() {
