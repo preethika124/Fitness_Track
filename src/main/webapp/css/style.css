@@ -15,6 +15,13 @@ body {
     border-radius: 0 0 18px 18px;
     margin-bottom: 25px;
 }
+#tipCard {
+    min-height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;
+}
+
 
 .nav-links a {
     margin-left: 18px;

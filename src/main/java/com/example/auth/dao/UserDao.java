@@ -10,11 +10,15 @@ import com.example.auth.util.DbUtil;
 
 public class UserDao {
 
+    /* ================= CREATE USER ================= */
     public boolean createUser(User user) throws SQLException {
-        String sql = "INSERT INTO users (email, password_hash, first_name, last_name, role) VALUES (?, ?, ?, ?, ?)";
+
+        String sql =
+            "INSERT INTO users (email, password_hash, first_name, last_name, role) " +
+            "VALUES (?, ?, ?, ?, ?)";
 
         try (Connection c = DbUtil.getConnection();
-            PreparedStatement ps = c.prepareStatement(sql)) {
+             PreparedStatement ps = c.prepareStatement(sql)) {
 
             ps.setString(1, user.getEmail());
             ps.setString(2, user.getPasswordHash());
@@ -26,21 +30,48 @@ public class UserDao {
         }
     }
 
-    public void updateProfile(String email, Integer age, Double weight, String goals) throws Exception {
-        String sql = "UPDATE users SET age=?, weight=?, goals=? WHERE email=?";
+    /* ================= UPDATE PROFILE ================= */
+    public void updateProfile(
+            String email,
+            Integer age,
+            Double weight,
+            Integer weeklyExerciseGoal,
+            Double dailyWaterGoal,
+            Double dailySleepGoal
+    ) throws SQLException {
+
+        String sql =
+            "UPDATE users SET " +
+            "age = ?, " +
+            "weight = ?, " +
+            "weekly_exercise_goal = ?, " +
+            "daily_water_goal = ?, " +
+            "daily_sleep_goal = ? " +
+            "WHERE email = ?";
+
         try (Connection conn = DbUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setObject(1, age);
             ps.setObject(2, weight);
-            ps.setString(3, goals);
-            ps.setString(4, email);
+            ps.setObject(3, weeklyExerciseGoal);
+            ps.setObject(4, dailyWaterGoal);
+            ps.setObject(5, dailySleepGoal);
+            ps.setString(6, email);
+
             ps.executeUpdate();
         }
     }
 
+    /* ================= FIND USER BY EMAIL ================= */
     public User findByEmail(String email) throws SQLException {
-        String sql = "SELECT * FROM users WHERE email = ?";
+
+        
+
+        String sql =
+            "SELECT id, email, password_hash, first_name, last_name, role, " +
+            "age, weight, weekly_exercise_goal, daily_water_goal, daily_sleep_goal " +
+            "FROM users WHERE email = ?";
 
         try (Connection c = DbUtil.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
@@ -48,23 +79,34 @@ public class UserDao {
             ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) {
-                User u = new User();
-                u.setId(rs.getInt("id"));
-                u.setEmail(rs.getString("email"));
-                u.setPasswordHash(rs.getString("password_hash"));
-                u.setFirstName(rs.getString("first_name"));
-                u.setLastName(rs.getString("last_name"));
-                u.setRole(rs.getString("role"));
+            if (!rs.next()) return null;
 
-                // SAFE conversions for nullable numeric values
-                u.setAge(rs.getObject("age") != null ? rs.getInt("age") : null);
-                u.setWeight(rs.getObject("weight") != null ? rs.getDouble("weight") : null);
+            User u = new User();
+u.setId(rs.getInt("id"));
+u.setEmail(rs.getString("email"));
+u.setPasswordHash(rs.getString("password_hash"));
+u.setFirstName(rs.getString("first_name"));
+u.setLastName(rs.getString("last_name"));
+u.setRole(rs.getString("role"));
 
-                u.setGoals(rs.getString("goals"));
-                return u;
-            }
+// Correct numeric handling
+int age = rs.getInt("age");
+u.setAge(rs.wasNull() ? null : age);
+
+double weight = rs.getDouble("weight");
+u.setWeight(rs.wasNull() ? null : weight);
+
+int weekly = rs.getInt("weekly_exercise_goal");
+u.setWeeklyExerciseGoal(rs.wasNull() ? null : weekly);
+
+double water = rs.getDouble("daily_water_goal");
+u.setDailyWaterGoal(rs.wasNull() ? null : water);
+
+double sleep = rs.getDouble("daily_sleep_goal");
+u.setDailySleepGoal(rs.wasNull() ? null : sleep);
+
+
+            return u;
         }
-        return null;
     }
 }

@@ -1,6 +1,7 @@
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\dao\BlogDao.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\dao\BlogLikeDao.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\dao\BmiDao.java
+C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\dao\ChatDao.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\dao\CommentDao.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\dao\DashboardDao.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\dao\HealthTipDao.java
@@ -25,6 +26,8 @@ C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\model\User
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\model\Workout.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\BlogServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\BmiServlet.java
+C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\ChatMessagesServlet.java
+C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\ChatSendServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\CommentServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\DashboardServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\DbServlet.java
@@ -37,10 +40,13 @@ C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\Me
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\NutritionAnalyticsServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\ProfileServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\RegisterServlet.java
+C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\TrainerChatListServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\TrainerMatchServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\UpdateProfileServlet.java
+C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\UserChatListServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\WorkoutAddServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\servlet\WorkoutAnalyticsServlet.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\util\DbUtil.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\util\JwtUtil.java
 C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\util\PasswordUtil.java
+C:\Users\preet\Downloads\Fitness_Track\src\main\java\com\example\auth\util\UserUtil.java

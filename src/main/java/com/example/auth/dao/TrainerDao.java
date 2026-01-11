@@ -6,6 +6,8 @@ import com.example.auth.util.DbUtil;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
 
 public class TrainerDao {
 
@@ -35,9 +37,11 @@ public class TrainerDao {
         return out;
     }
 
-    public Trainer createTrainer(Trainer t) throws SQLException {
+    public Trainer createOrUpdateTrainer(Trainer t) throws SQLException {
 
-    String findUser = "SELECT id, role, first_name FROM users WHERE email = ?";
+    String findUser =
+        "SELECT id, role, first_name FROM users WHERE email = ?";
+
     try (Connection c = DbUtil.getConnection();
          PreparedStatement ps = c.prepareStatement(findUser)) {
 
@@ -52,65 +56,99 @@ public class TrainerDao {
             String role = rs.getString("role");
             String name = rs.getString("first_name");
 
-            if (role == null || !"trainer".equalsIgnoreCase(role)) {
+            if (!"trainer".equalsIgnoreCase(role)) {
                 throw new IllegalStateException("user-not-trainer");
             }
 
-            // ============================================
-            // 1. CHECK IF USER ALREADY ENROLLED AS TRAINER
-            // ============================================
-            String checkExisting =
-    "SELECT id, specialization, experience_years, availability, bio " +
-    "FROM trainers " +
-    "WHERE user_id = ? AND specialization = ? " +
-    "AND experience_years = ? AND availability = ?";
+          
+            String findTrainer =
+                "SELECT id, specialization, experience_years, availability, bio " +
+                "FROM trainers WHERE user_id = ?";
 
-            try (PreparedStatement checkPs = c.prepareStatement(checkExisting)) {
-                checkPs.setInt(1, userId);
-                checkPs.setString(2, t.getSpecialization());
-                checkPs.setInt(3, t.getExperienceYears());
-                checkPs.setString(4, t.getAvailability());
+            try (PreparedStatement fps = c.prepareStatement(findTrainer)) {
+                fps.setInt(1, userId);
 
-                try (ResultSet existRs = checkPs.executeQuery()) {
-                    if (existRs.next()) {
-                       
-    throw new IllegalStateException("trainer-already-enrolled");
+                try (ResultSet trs = fps.executeQuery()) {
 
+             
+                    if (trs.next()) {
 
+                        int trainerId = trs.getInt("id");
+                        String spec = trs.getString("specialization");
+                        Integer exp = trs.getInt("experience_years");
+                        String avail = trs.getString("availability");
+                        String bio = trs.getString("bio");
+
+                        boolean same =
+                            Objects.equals(spec, t.getSpecialization()) &&
+                            Objects.equals(exp, t.getExperienceYears()) &&
+                            Objects.equals(avail, t.getAvailability()) &&
+                            Objects.equals(bio, t.getBio());
+
+                        if (same) {
+                            throw new IllegalStateException(
+                                "trainer-already-enrolled"
+                            );
+                        }
+
+                   
+                        String update =
+                            "UPDATE trainers SET " +
+                            "specialization=?, experience_years=?, availability=?, bio=? " +
+                            "WHERE id=?";
+
+                        try (PreparedStatement ups =
+                                 c.prepareStatement(update)) {
+
+                            ups.setString(1, t.getSpecialization());
+                            ups.setObject(2, t.getExperienceYears());
+                            ups.setString(3, t.getAvailability());
+                            ups.setString(4, t.getBio());
+                            ups.setInt(5, trainerId);
+                            ups.executeUpdate();
+                        }
+
+                        t.setId(trainerId);
+                        t.setUserId(userId);
+                        t.setName(name);
+                        return t;
                     }
                 }
             }
 
-            // ============================================
-            // 2. IF NOT EXISTS → CREATE NEW TRAINER
-            // ============================================
-            String insert = "INSERT INTO trainers(user_id, specialization, experience_years, availability, bio) VALUES(?,?,?,?,?)";
-            try (PreparedStatement ips = c.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS)) {
+            // =================================================
+            // CASE 2: Trainer does NOT exist → INSERT
+            // =================================================
+            String insert =
+                "INSERT INTO trainers(user_id, specialization, experience_years, availability, bio) " +
+                "VALUES (?,?,?,?,?)";
+
+            try (PreparedStatement ips =
+                     c.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS)) {
 
                 ips.setInt(1, userId);
                 ips.setString(2, t.getSpecialization());
-                ips.setInt(3, t.getExperienceYears());
+                ips.setObject(3, t.getExperienceYears());
                 ips.setString(4, t.getAvailability());
                 ips.setString(5, t.getBio());
 
-                int affected = ips.executeUpdate();
-                if (affected == 0) {
-                    throw new SQLException("creating trainer failed");
-                }
+                ips.executeUpdate();
 
                 try (ResultSet gk = ips.getGeneratedKeys()) {
                     if (gk.next()) {
                         t.setId(gk.getInt(1));
                         t.setUserId(userId);
-                        if (t.getName() == null) t.setName(name);
+                        t.setName(name);
                         return t;
-                    } else {
-                        throw new SQLException("creating trainer failed, no id obtained");
                     }
                 }
             }
         }
     }
+
+    throw new SQLException("trainer save failed");
 }
+
+
 
 }

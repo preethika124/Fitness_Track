@@ -156,7 +156,7 @@ try {
             t.setAvailability(r.availability);
          
 
-            Trainer created = trainerDao.createTrainer(t);
+            Trainer created = trainerDao.createOrUpdateTrainer(t);
 
             resp.setStatus(201);
             mapper.writeValue(resp.getWriter(), created);

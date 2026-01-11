@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.style.backgroundImage = `url('${data.image}')`;
             card.style.backgroundSize = "cover";
             card.style.backgroundPosition = "center";
+             card.style.minHeight = "220px";  
             card.style.padding = "40px";
             card.style.borderRadius = "18px";
             card.style.color = "white";

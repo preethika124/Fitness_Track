@@ -223,7 +223,7 @@
 
     <div class="analytics-grid">
         <div class="analytics-card">
-            <div class="analytics-title">Today Calories</div>
+            <div class="analytics-title">Today Calories intaken</div>
             <div class="analytics-value" id="todayCalories">--</div>
         </div>
 
@@ -252,6 +252,12 @@
     </div>
 
     <div class="chart-box">
+    <div class="chart-title">Workout Duration (minutes)</div>
+    <canvas id="durationChart"></canvas>
+</div>
+
+
+    <div class="chart-box">
         <div class="chart-title">Calories Consumed vs Burned</div>
         <canvas id="calorieChart"></canvas>
     </div>
@@ -260,6 +266,49 @@
         <div class="chart-title">Water Intake & Sleep</div>
         <canvas id="logChart"></canvas>
     </div>
+
+    <!-- ================= GOAL TRACKING ================= -->
+<div class="chart-box">
+    <div class="chart-title">Goals</div>
+
+    <div class="progress-section">
+
+        <!-- Weekly Exercise -->
+        <div class="progress-item">
+            <div class="progress-label">
+                <span>Weekly Exercise Goal</span>
+                <span id="exerciseText">--</span>
+            </div>
+            <div class="progress-bar">
+                <div id="exerciseBar" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Water Intake -->
+        <div class="progress-item">
+            <div class="progress-label">
+                <span>Daily Water Intake</span>
+                <span id="waterText">--</span>
+            </div>
+            <div class="progress-bar">
+                <div id="waterBar" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Sleep -->
+        <div class="progress-item">
+            <div class="progress-label">
+                <span>Daily Sleep</span>
+                <span id="sleepText">--</span>
+            </div>
+            <div class="progress-bar">
+                <div id="sleepBar" class="progress-fill"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 </div>
 

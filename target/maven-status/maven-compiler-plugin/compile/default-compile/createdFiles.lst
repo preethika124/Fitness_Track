@@ -4,12 +4,14 @@ com\example\auth\model\Blog.class
 com\example\auth\dao\UserDao.class
 com\example\auth\servlet\BmiServlet.class
 com\example\auth\servlet\DashboardServlet.class
+com\example\auth\util\UserUtil.class
 com\example\auth\servlet\CommentServlet.class
 com\example\auth\servlet\LikeServlet.class
 com\example\auth\servlet\UpdateProfileServlet$UpdateReq.class
 com\example\auth\model\User.class
 com\example\auth\dao\NutritionAnalyticsDao.class
 com\example\auth\dao\TrainerDao.class
+com\example\auth\servlet\UserChatListServlet.class
 com\example\auth\servlet\UpdateProfileServlet.class
 com\example\auth\servlet\TrainerMatchServlet$Req.class
 com\example\auth\servlet\LikeServlet$LikeRequest.class
@@ -31,6 +33,7 @@ com\example\auth\servlet\BlogServlet$BlogRequest.class
 com\example\auth\dao\BmiDao.class
 com\example\auth\servlet\WorkoutAddServlet.class
 com\example\auth\servlet\LogsAnalyticsServlet.class
+com\example\auth\servlet\TrainerChatListServlet.class
 com\example\auth\dao\LogsAnalyticsDao.class
 com\example\auth\model\Workout.class
 com\example\auth\dao\DashboardDao.class
@@ -47,10 +50,14 @@ com\example\auth\servlet\MealsAddServlet.class
 com\example\auth\dao\HealthTipDao.class
 com\example\auth\model\Meal.class
 com\example\auth\servlet\LoginServlet.class
+com\example\auth\servlet\ChatMessagesServlet.class
+com\example\auth\servlet\ChatSendServlet.class
+com\example\auth\dao\ChatDao.class
 com\example\auth\servlet\MealsAddServlet$MealReq.class
 com\example\auth\model\DailyLog.class
 com\example\auth\servlet\LogsAddServlet.class
 com\example\auth\servlet\WorkoutAnalyticsServlet.class
+com\example\auth\servlet\ChatSendServlet$Req.class
 com\example\auth\servlet\WorkoutAddServlet$WorkoutReq.class
 com\example\auth\model\HealthTip.class
 com\example\auth\servlet\LoginServlet$LoginRequest.class

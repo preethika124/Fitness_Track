@@ -61,9 +61,20 @@
     </div>
 
     <div class="row">
-        <label>Goals</label>
-        <input id="goals" type="text" placeholder="Your fitness goals">
-    </div>
+    <label>Weekly Exercise Goal (days)</label>
+    <input id="exerciseGoal" type="number" min="1" max="7" placeholder="e.g. 4">
+</div>
+
+<div class="row">
+    <label>Daily Water Goal (liters)</label>
+    <input id="waterGoal" type="number" step="0.1" placeholder="e.g. 2.5">
+</div>
+
+<div class="row">
+    <label>Daily Sleep Goal (hours)</label>
+    <input id="sleepGoal" type="number" step="0.5" placeholder="e.g. 8">
+</div>
+
 
     <button class="primary" id="saveBtn">Save Changes</button>
     <button class="btn-ghost" id="logoutBtn">Back to Home</button>
